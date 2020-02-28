@@ -1,10 +1,10 @@
-import path from 'path'
+const path = require('path')
 const resolve = dir => path.join(__dirname, dir)
 
-BASE_URL = process.env.NODE_ENV === 'production' ? '/iview-admin' : '/'
+const PUBLIC_PATH = process.env.NODE_ENV === 'production' ? '/iview-admin' : '/'
 
 module.exports = {
-  baseUrl: BASE_URL,
+  publicPath: PUBLIC_PATH,
   chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src'))
